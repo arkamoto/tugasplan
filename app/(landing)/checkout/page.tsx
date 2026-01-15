@@ -1,5 +1,5 @@
-import CartItems from "../components/checkout.tsx/cart-items";
-import OrderInformation from "../components/checkout.tsx/order-information";
+import CartItems from "../components/checkout/cart-items";
+import OrderInformation from "../components/checkout/order-information";
 
 const Checkout = () => {
   return (
@@ -16,3 +16,4 @@ const Checkout = () => {
 };
 
 export default Checkout;
+
