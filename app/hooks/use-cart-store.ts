@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { Product } from "../types/index";
+import { Product } from "../types";
 
 export interface CartItem extends Product {
   qty: number;
@@ -36,7 +36,9 @@ export const useCartStore = create<CartStore>()(
         if (existingItem) {
           set({
             items: items.map((item) =>
-              item._id === product._id ? { ...item, qty: item.qty + qty } : item
+              item._id === product._id
+                ? { ...item, qty: item.qty + qty }
+                : item,
             ),
           });
         } else {
@@ -52,6 +54,6 @@ export const useCartStore = create<CartStore>()(
     }),
     {
       name: "cart-storage",
-    }
-  )
+    },
+  ),
 );

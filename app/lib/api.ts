@@ -1,6 +1,6 @@
 export async function fetchAPI<T>(
   endpoint: string,
-  options?: RequestInit
+  options?: RequestInit,
 ): Promise<T> {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${endpoint}`, {
     ...options,
@@ -23,6 +23,6 @@ export async function fetchAPI<T>(
 }
 
 export function getImageUrl(path: string) {
-  if (path.startsWith("http")) return path; // artinya url nya sudah valid
+  if (path.startsWith("http")) return path;
   return `${process.env.NEXT_PUBLIC_API_ROOT}/${path}`;
 }
